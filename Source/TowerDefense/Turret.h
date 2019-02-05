@@ -33,6 +33,6 @@ private:
 
 	//Sprite representing the turret
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Turret", meta = (AllowPrivateAccess = "true"))
-	class UPaperSprite* TurretSprite;
+	class UPaperSpriteComponent* TurretSprite;
 
 };

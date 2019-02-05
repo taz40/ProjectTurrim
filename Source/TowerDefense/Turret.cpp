@@ -2,7 +2,7 @@
 
 #include "Turret.h"
 #include "Components/ArrowComponent.h"
-#include "Paper2D/PaperSpriteComponent.h"
+#include "Paper2D/Classes/PaperSpriteComponent.h"
 
 // Sets default values
 ATurret::ATurret()
@@ -14,11 +14,12 @@ ATurret::ATurret()
 		RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Turret Base"));
 	
 	TurretDirection = CreateDefaultSubobject<UArrowComponent>(TEXT("Turret Direction"));
-	TurretDirection->attachTo(RootComponent);
+	TurretDirection->AttachTo(RootComponent);
 
-	TurretSprite = CreateDefaultSubobject<UPaperSprite>(TEXT("Turret Sprite"));
-	TurretSprite->attachTo(TurretDirection);
-
+	TurretSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("Turret Sprite"));
+	TurretSprite->AddWorldRotation(new FQuat(90, 90, 0, 0));
+	TurretSprite->AttachTo(TurretDirection);
+	
 }
 
 // Called when the game starts or when spawned
