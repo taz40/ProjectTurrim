@@ -17,7 +17,6 @@ ATurret::ATurret()
 	TurretDirection->AttachTo(RootComponent);
 
 	TurretSprite = CreateDefaultSubobject<UPaperSpriteComponent>(TEXT("Turret Sprite"));
-	TurretSprite->AddWorldRotation(new FQuat(90, 90, 0, 0));
 	TurretSprite->AttachTo(TurretDirection);
 	
 }
